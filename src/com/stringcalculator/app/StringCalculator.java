@@ -21,6 +21,11 @@ public class StringCalculator {
 		
 		List<String> nonEmptyNumberStrings = checkForEmptyString(numberStrings);
 		
+		List<String> negativeNumbers = checkForNegativeNumbers(nonEmptyNumberStrings);
+		if (!negativeNumbers.isEmpty()) {
+			throwNegativeNumberException(negativeNumbers);
+		}
+		
 		return calculateSum(nonEmptyNumberStrings);
 	}
 	
@@ -52,6 +57,18 @@ public class StringCalculator {
 		return nums;
 	}
 	
+	private List<String> checkForNegativeNumbers(List<String> numberList) {
+		return numberList.stream()
+				.filter(num -> Integer.valueOf(num) < 0)
+				.collect(Collectors.toList());
+	}
+	
+	private void throwNegativeNumberException(List<String> negativeNumbers) {
+			StringBuilder sb = new StringBuilder("Negative numbers not allowed! ");
+			sb.append(negativeNumbers);
+			throw new IllegalArgumentException(sb.toString());
+	}
+
 	private int calculateSum(List<String> nonEmptyNumberStrings) {
 		return nonEmptyNumberStrings.stream()
 				.mapToInt(Integer::parseInt)

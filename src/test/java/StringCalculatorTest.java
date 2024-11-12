@@ -61,11 +61,17 @@ public class StringCalculatorTest {
 		StringCalculator stringCalculator = new StringCalculator();
 		assertEquals(15, stringCalculator.add("//;\n1;2;3;4;5"));
 	}
-	
+	 
 	@Test
 	void testAddMultipleNumbersStringWithEmptyStringsInBetween() {
 		StringCalculator stringCalculator = new StringCalculator();
 		assertEquals(40, stringCalculator.add(",10,15,5,,6,4,"));
+	}
+	
+	@Test
+	void testAddStringWithNegativeNumbers() {
+		StringCalculator stringCalculator = new StringCalculator();
+		stringCalculator.add("1,2,-3,4,-5,-6");
 	}
 
 }

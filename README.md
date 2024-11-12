@@ -4,6 +4,9 @@
 
 # Test Cases:
 
+## testAddEmptyString()
+// Empty String
+
 ## testAddOneNumberString()
 // String containing only one number
 
@@ -12,3 +15,6 @@
 
 ## testAddCommaSeperatedNumbersString()
 // String containing "n" amount of numbers separated by comma
+
+## testAddStringWithoutNumber()
+// String containing only one Character which is not an Integer

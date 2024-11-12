@@ -37,5 +37,11 @@ public class StringCalculatorTest {
 		StringCalculator stringCalculator = new StringCalculator();
 		assertEquals(-1, stringCalculator.add("s"));
 	}
+	
+	@Test
+	void testAddStringWithNewLineDelimiter() { 
+		StringCalculator stringCalculator = new StringCalculator();
+		assertEquals(21, stringCalculator.add("1,2,3\n4\n5,6"));
+	}
 
 }

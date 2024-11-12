@@ -14,7 +14,7 @@ public class StringCalculator {
 		
 		int sum = 0;
 		
-		String[] arr = inputString.split(",");
+		String[] arr = inputString.split(",|\\n");
 		
 		for (String str: arr) {
 			sum += Integer.parseInt(str);

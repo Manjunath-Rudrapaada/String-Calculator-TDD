@@ -18,3 +18,17 @@
 
 ## testAddStringWithoutNumber()
 // String containing only one Character which is not an Integer
+
+## testAddStringWithCustomDelimiterAsterisk()
+// String with custom delimiter "*"
+
+## testAddStringWithCustomDelimiterColon()
+// String with custom delimiter ":"
+
+## testAddStringWithCustomDelimiterSemiColon()
+// String with custom delimiter ";"
+
+## testAddMultipleNumbersStringWithEmptyStringsInBetween()
+// String containing numbers and empty strings in between
+
+

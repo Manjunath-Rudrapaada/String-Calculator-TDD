@@ -37,5 +37,29 @@ public class StringCalculatorTest {
 		StringCalculator stringCalculator = new StringCalculator();
 		assertEquals(-1, stringCalculator.add("s"));
 	}
+	
+	@Test
+	void testAddStringWithNewLineDelimiter() { 
+		StringCalculator stringCalculator = new StringCalculator();
+		assertEquals(21, stringCalculator.add("1,2,3\n4\n5,6"));
+	}
+	
+	@Test
+	void testAddStringWithCustomDelimiterAsterisk() {
+		StringCalculator stringCalculator = new StringCalculator();
+		assertEquals(10, stringCalculator.add("//*\n1*2*3*4"));
+	}
+
+	@Test
+	void testAddStringWithCustomDelimiterColon() {
+		StringCalculator stringCalculator = new StringCalculator();
+		assertEquals(15, stringCalculator.add("//:\n1:2:3:4:5"));
+	}
+
+	@Test
+	void testAddStringWithCustomDelimiterSemiColon() {
+		StringCalculator stringCalculator = new StringCalculator();
+		assertEquals(15, stringCalculator.add("//;\n1;2;3;4;5"));
+	}
 
 }

@@ -1,5 +1,7 @@
 package com.stringcalculator.app;
 
+import java.util.regex.Pattern;
+
 public class StringCalculator {
 	
 	public int add(String inputString) {
@@ -14,9 +16,17 @@ public class StringCalculator {
 		
 		int sum = 0;
 		
-		String[] arr = inputString.split(",");
+		String delimiter = ",|\\n";
+
+		if (inputString.startsWith("//")) {
+			int delimiterPatternEndIndex = inputString.indexOf("\n");
+			delimiter = Pattern.quote(inputString.substring(2, delimiterPatternEndIndex));
+			inputString = inputString.substring(delimiterPatternEndIndex + 1);
+		}
+
+		String[] nums = inputString.split(delimiter);
 		
-		for (String str: arr) {
+		for (String str: nums) {
 			sum += Integer.parseInt(str);
 		}
 		

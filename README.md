@@ -2,6 +2,14 @@
 
 # This is a Simple String Calculator
 
+# The program can take unknown amount of numbers with different delimiters and return their sum.
+
+# Features used:
+
+## 1) Stream API for parallel processing to calculate the Sum of numbers
+
+## 1) Pattern Matching
+
 # Test Cases:
 
 ## testAddEmptyString()
@@ -36,4 +44,3 @@
 
 ## testAddStringContainingNumbersGreaterThanThousand()
 // Numbers bigger than 1000 are ignored
-

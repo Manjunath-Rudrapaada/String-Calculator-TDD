@@ -73,5 +73,11 @@ public class StringCalculatorTest {
 		StringCalculator stringCalculator = new StringCalculator();
 		stringCalculator.add("1,2,-3,4,-5,-6");
 	}
+	
+	@Test
+	void testAddStringContainingNumbersGreaterThanThousand() {
+		StringCalculator stringCalculator = new StringCalculator();
+		assertEquals(2331,stringCalculator.add("1,2,3,4,1000,5,1010,6,980,330,2024"));
+	}
 
 }

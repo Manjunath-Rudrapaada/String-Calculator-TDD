@@ -72,6 +72,7 @@ public class StringCalculator {
 	private int calculateSum(List<String> nonEmptyNumberStrings) {
 		return nonEmptyNumberStrings.stream()
 				.mapToInt(Integer::parseInt)
+				.filter(num -> num <= 1000) // Ignore numbers > 1000
 				.sum();
 	}
 	

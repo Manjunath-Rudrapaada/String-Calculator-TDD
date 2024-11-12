@@ -31,4 +31,9 @@
 ## testAddMultipleNumbersStringWithEmptyStringsInBetween()
 // String containing numbers and empty strings in between
 
+## testAddStringWithNegativeNumbers()
+// String containing negative numbers (Test case fails since we are throwing Exception)
+
+## testAddStringContainingNumbersGreaterThanThousand()
+// Numbers bigger than 1000 are ignored
 

@@ -55,16 +55,14 @@ public class StringCalculator {
 		}
 		
 		String[] nums = inputString.split(delimiter);
-		List<String> evenNums = new ArrayList<>();
 		
 		if (delimiter.equals(Pattern.quote("!"))) {
-			for(String str: nums) {
-				if(Integer.parseInt(str) % 2 == 0) {
-					evenNums.add(str);
-				}
-			}
-			System.out.println("Even Nums: " + evenNums);
-			return evenNums.toArray(new String[0]);
+			String[] evenNums = Arrays.stream(nums)
+                    .filter(num -> Integer.parseInt(num) % 2 == 0)
+                    .toArray(String[]::new);
+			
+			System.out.println("Even Nums: " + Arrays.toString(evenNums));
+			return evenNums;
 		}
 		
 		return nums;

@@ -79,5 +79,11 @@ public class StringCalculatorTest {
 		StringCalculator stringCalculator = new StringCalculator();
 		assertEquals(2331,stringCalculator.add("1,2,3,4,1000,5,1010,6,980,330,2024"));
 	}
+	
+	@Test
+	void testAddStringWithCustomDelimiterPercentageAndPrimeNums() {
+		StringCalculator stringCalculator = new StringCalculator();
+		assertEquals(6, stringCalculator.add("//!\n1!2!3!4!5"));
+	}
 
 }

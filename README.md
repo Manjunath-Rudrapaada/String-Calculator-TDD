@@ -44,3 +44,6 @@
 
 ## testAddStringContainingNumbersGreaterThanThousand()
 // Numbers bigger than 1000 are ignored
+
+## testAddStringWithCustomDelimiterExclaimationAndPrimeNums()
+// Prime numbers with exclaimation as delimiter

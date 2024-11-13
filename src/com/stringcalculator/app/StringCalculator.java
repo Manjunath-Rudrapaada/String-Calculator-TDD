@@ -57,12 +57,19 @@ public class StringCalculator {
 		String[] nums = inputString.split(delimiter);
 		
 		if (delimiter.equals(Pattern.quote("!"))) {
-			String[] evenNums = Arrays.stream(nums)
-                    .filter(num -> Integer.parseInt(num) % 2 == 0)
+//			String[] evenNums = Arrays.stream(nums)
+//                    .filter(num -> Integer.parseInt(num) % 2 == 0)
+//                    .toArray(String[]::new);
+//			
+//			System.out.println("Even Nums: " + Arrays.toString(evenNums));
+//			return evenNums;
+			
+			String[] primeNums = Arrays.stream(nums)
+                    .filter(StringCalculator::isPrime)
                     .toArray(String[]::new);
 			
-			System.out.println("Even Nums: " + Arrays.toString(evenNums));
-			return evenNums;
+			System.out.println("Prime Nums: " + Arrays.toString(primeNums));
+			return primeNums;
 		}
 		
 		return nums;
@@ -79,6 +86,23 @@ public class StringCalculator {
 			sb.append(negativeNumbers);
 			throw new IllegalArgumentException(sb.toString());
 	}
+	
+	public static boolean isPrime(String strNum) {
+        int number = Integer.parseInt(strNum);
+        
+        if (number <= 1) {
+            return false;
+        }
+        
+        for (int i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+        
+        return true;
+    }
+
 
 	private int calculateSum(List<String> nonEmptyNumberStrings) {
 		return nonEmptyNumberStrings.stream()

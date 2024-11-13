@@ -1,5 +1,6 @@
 package com.stringcalculator.app;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -54,6 +55,16 @@ public class StringCalculator {
 		}
 		
 		String[] nums = inputString.split(delimiter);
+		
+		if (delimiter.equals(Pattern.quote("!"))) {
+			String[] evenNums = Arrays.stream(nums)
+                    .filter(num -> Integer.parseInt(num) % 2 == 0)
+                    .toArray(String[]::new);
+			
+			System.out.println("Even Nums: " + Arrays.toString(evenNums));
+			return evenNums;
+		}
+		
 		return nums;
 	}
 	

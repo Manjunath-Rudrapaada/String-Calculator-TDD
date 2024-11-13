@@ -81,9 +81,9 @@ public class StringCalculatorTest {
 	}
 	
 	@Test
-	void testAddStringWithCustomDelimiterPercentageAndPrimeNums() {
+	void testAddStringWithCustomDelimiterExclaimationAndPrimeNums() {
 		StringCalculator stringCalculator = new StringCalculator();
-		assertEquals(6, stringCalculator.add("//!\n1!2!3!4!5"));
+		assertEquals(10, stringCalculator.add("//!\n1!2!3!4!5"));
 	}
 
 }
